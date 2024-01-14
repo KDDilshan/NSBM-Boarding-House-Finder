@@ -1,10 +1,10 @@
 //import Login from "./Pages/LoginPage/Login";
-
+//import {BrowserRouter as Router,Route,Switch} from 'react'
 import SignUp from "./Pages/SignUpPage/SignUp";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <SignUp/>
     </div>
   );
