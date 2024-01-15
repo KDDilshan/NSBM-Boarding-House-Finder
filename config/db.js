@@ -1,6 +1,7 @@
 import mysql from 'mysql2';
 import dotenv from 'dotenv';
 
+
 dotenv.config()
 
 const pool=mysql.createPool({
@@ -10,7 +11,10 @@ const pool=mysql.createPool({
     database:process.env.DB_DATABASE,
 }).promise()
 
+
 console.log('Connected to Mqsql')
+
+
 
 
 export default pool
