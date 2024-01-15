@@ -18,7 +18,7 @@
     padding: 50px;
     padding-top: 50px;
     padding-bottom: 200px;
-    margin-left: 100px;
+    margin-left: 200px;
     margin-top: 60px;
     margin-bottom: 80px;
     border-radius: 20px;
@@ -37,6 +37,9 @@
     margin-left: -22px;
     font-size: 32px;
     top: 40px;
+}
+.userInputs{
+    margin-left: -30px;
 }
 
 .userInput{
@@ -75,6 +78,10 @@
     padding: 8px 125px;
     margin: 4px 2px;
     cursor: pointer;
+}
+.buttonContainer{
+    margin-top: -20px;
+    margin-left: -110px;
 }
 .signUpLink{
     margin-top: 20px;

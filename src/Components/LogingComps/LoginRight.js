@@ -67,9 +67,11 @@ export default function LoginRight() {
                     <div className="passwordContainer">
                         <LockIcon/>
                         <input type="password" name="password" value={loginData.password} onChange={handleChange} className="passwordInput" />
+                    </div>
+                    <div className="buttonContainer">
+                        <button type="submit" className="button">SignUp</button>
                     </div>       
-                    <button type="submit" className="button">SignUp</button>
-                    <div className="signUpLink">Don't have a account SignUp</div>
+                    <div className="signUpLink">Don't have a account <a href='/Signup'>SignUp</a></div>
                 </div>
             </div>
         </div>
