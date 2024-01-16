@@ -1,7 +1,7 @@
 import mysql from 'mysql2';
 import pool from '../config/db.js';
 
-export const craeteoneuser=(async(name,password,role,gender,location,contactno)=>{
+export const craeteoneuser=(async(name,password,role,gender,location,contactNo)=>{
     try{
         const rolevalue=role==='user'?'user':'owner'
         const gendervalue=gender==='male'?'male':'female'
@@ -9,7 +9,7 @@ export const craeteoneuser=(async(name,password,role,gender,location,contactno)=
         const [user]=await pool.query(
             `INSERT INTO users(Username,Password,Role,Gender,Location,ContactNumber)
             VALUES(?,?,?,?,?,?)`
-            ,[name,password,rolevalue,gendervalue,location,contactno])
+            ,[name,password,rolevalue,gendervalue,location,contactNo])
         return user
     }catch(error){
         console.log('the error in creating user:',error)
@@ -39,7 +39,7 @@ export const loginuser=(async(username)=>{
             [username])
         if (login.length>0){
             const storedPassword=login[0].Password
-           return storedPassword
+            return storedPassword
         }else{
             return null
         }

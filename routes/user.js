@@ -9,9 +9,9 @@ const router=express.Router()
 
 router.post('/api/create',async(req,res)=>{
     try{
-        const {name,password,role,gender,location,contactno}=req.body
+        const {name,password,role,gender,location,contactNo}=req.body
         const hash=await bcrypt.hash(password,5)
-        const create=craeteoneuser(name,hash,role,gender,location,contactno)
+        const create=craeteoneuser(name,hash,role,gender,location,contactNo)
         res.status(200).json({create:'user created sucessfully'})
     }catch(error){
         console.log('Error in fetching data:',error)
@@ -32,8 +32,8 @@ router.post('/api/login',async(req,res)=>{
             const cheaking=await bcrypt.compare(password,log)
             if(cheaking){
                 const user={name:username}
-                const accesstoken=jwt.sign(user,process.env.TOKEN_KEY,{expiresIn:"1m"})
-                res.send(accesstoken)
+                const accessToken=jwt.sign(user,process.env.TOKEN_KEY,{expiresIn:"1m"})
+                res.send(accessToken)
             }else{
                 res.status(404).send("invaid password")
             }           
