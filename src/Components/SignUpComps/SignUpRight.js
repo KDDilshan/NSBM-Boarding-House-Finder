@@ -46,7 +46,7 @@ export default function SignUpRight() {
 
   return (
     <div className='FormContainer'>
-        <form onClick={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div className="formTopic">
                 <span className="topic">Sign Up</span>
             </div>
@@ -72,7 +72,7 @@ export default function SignUpRight() {
                     <div className="inputItem">
                     <span className="inputRole">Gender</span>
                         <label className='maleInput'>Male
-                            <input type="radio" name='gender' value='male' checked={formData.gender === 'make'} onChange={handleChange}/>
+                            <input type="radio" name='gender' value='male' checked={formData.gender === 'male'} onChange={handleChange}/>
                         </label>
                         <label className='femaleInput'>Female
                             <input type="radio" name='gender' value='female' checked={formData.gender === 'female'} onChange={handleChange}/>
