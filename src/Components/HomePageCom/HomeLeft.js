@@ -10,7 +10,7 @@ export default function HomeLeft() {
             <label className='nameUni'>NSBM</label>
         </div>
         <div className="uniCardBottom">
-            <img src="./images/nsbm.jpg" alt="" className="uniImage" />
+            <a href='/BoardingPage'><img src="./images/nsbm.jpg" alt="" className="uniImage" /></a>
         </div>
       </li>
       <li className="uniList">
