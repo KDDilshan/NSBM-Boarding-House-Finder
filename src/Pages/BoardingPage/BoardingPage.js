@@ -3,7 +3,7 @@ import './boardingPage.css'
 import BoardingLeft from '../../Components/BoardingPageCom/BoardingLeft'
 import BoardingRight from '../../Components/BoardingPageCom/BoardingRight'
 import NavBar from '../../Components/NavigationBar/NavBar'
-//import Footer from '../../Components/Footer/Footer'
+import Footer from '../../Components/Footer/Footer'
 
 export default function BoardingPage() {
   return (
@@ -13,7 +13,7 @@ export default function BoardingPage() {
         <BoardingLeft/>
         <BoardingRight/>
       </div>
-      
+      <Footer/>
     </div>
     
   )
