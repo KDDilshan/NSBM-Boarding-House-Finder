@@ -6,7 +6,7 @@ export default function NavBar() {
   return (
     <div className='NavBarBox'>
             <div className="navBarLeft">
-                <a href='/HomePage' className="logo">campus bodima</a>
+                <a href='/' className="logo">campus bodima</a>
             </div>
             <div className="navBarRight">
               <div className="navBarIcons">
