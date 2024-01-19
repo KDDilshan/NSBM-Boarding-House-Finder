@@ -13,4 +13,4 @@ export const getowners=(async(req,res)=>{
     }
 })
 
-export const getLocation
+// export const getLocation
