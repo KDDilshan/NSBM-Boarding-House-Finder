@@ -1,12 +1,11 @@
 .topic{
     font-family: sans-serif;
-    background-color: #b4c7be;
     display: flex;
     padding: 20px;
     margin-left: 0;
 }
 
-.topicContainer{
+.HousetopicContainer{
     margin-bottom: 20px;
     display: flex;
     align-items: center;

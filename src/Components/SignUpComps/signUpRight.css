@@ -28,7 +28,7 @@
     margin-top: -50px;
     background-color: rgb(232, 249, 244);
     border-radius: 20px;
-    padding-bottom: 85px;
+    padding-bottom: 60px;
     z-index: 20px;
 }
 
@@ -89,10 +89,10 @@
     margin-left: 20px;
 }
 .maleInput{
-    margin-left: 50px;
+    margin-left: 68px;
 }
 .femaleInput{
-    margin-left: 20px;
+    margin-left: 48px;
 }
 
 .button{
