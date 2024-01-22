@@ -6,15 +6,28 @@ const router = express.Router();
 
 router.post('/saveProduct', async (req, res) => {
   try {
-    const product = new Product(req.body);
+    const { userID, content } = req.body;
+
+    // Validate the request body
+    if (!userID || !content) {
+      return res.status(400).json({ error: 'User ID and content are required' });
+    }
+
+    // Create a new Product instance with the provided user ID and content
+    const product = new Product({ userID, content });
+
+    // Save the product to the MongoDB database
     const savedProduct = await product.save();
 
+    // Now, savedProduct._id contains the MongoDB document ID
+
+    // Save the MongoDB document ID to the MySQL database
     const mysqlId = savedProduct._id.toString();
-    await pool.query('INSERT INTO owners (Description) VALUES (?)', [mysqlId]);
+    await pool.query('INSERT INTO owners (UserID, Description) VALUES (?, ?)', [userID, mysqlId]);
 
     res.status(201).json({
       message: 'Product saved successfully!',
-      productId: mysqlId,
+      productId: savedProduct._id,
     });
   } catch (error) {
     console.error(error);

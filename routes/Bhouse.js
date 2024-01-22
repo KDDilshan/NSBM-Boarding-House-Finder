@@ -17,9 +17,9 @@ router.get('/api/ownerData',async (req,res)=>{
     }
 })
 
-router.post('/api/location',async(req,res)=>{
-    const{Latitude,Longitude}=req.body
-    const Location= await getLocation(Latitude,Longitude)
-})
+// router.post('/api/location',async(req,res)=>{
+//     const{Latitude,Longitude}=req.body
+//     const Location= await getLocation(Latitude,Longitude)
+// })
 
 export {router as Ownerdata}
