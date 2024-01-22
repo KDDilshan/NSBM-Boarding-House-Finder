@@ -5,8 +5,9 @@ import {createReview,getReview} from '../controllers/reviewController.js';
 
 const router=express.Router()
 
-router.post('/api/addReview',(req,res)=>{
+export const postroute=router.post('/api/addReview',(req,res)=>{
     try{
+        const user = req.user;
         const{userId, houseId,rating,description}=req.body
         const result=createReview(userId, houseId,rating,description)
         res.status(200).send("Its created")
@@ -16,7 +17,7 @@ router.post('/api/addReview',(req,res)=>{
     }
 })
 
-router.get('/api/getReview',async(req,res)=>{
+export const getroute=router.get('/api/getReview',async(req,res)=>{
     try {
         const getonereview=await getReview()
         res.status(200).send(getonereview)
@@ -28,4 +29,3 @@ router.get('/api/getReview',async(req,res)=>{
 
 
 
-export {router as reviewRoutes}
