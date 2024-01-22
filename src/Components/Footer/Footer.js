@@ -24,10 +24,6 @@ export default function Footer() {
                   <DoubleArrowIcon/>
                   <span className="contentTopic">About</span>
                 </div>
-                <div className="faq">
-                  <DoubleArrowIcon/>
-                  <span className="contentTopic">FAQ</span>
-                </div>
               </div>
           </div>
           <div className="topMiddle">

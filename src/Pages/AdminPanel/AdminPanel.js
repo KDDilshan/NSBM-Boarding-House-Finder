@@ -1,10 +1,13 @@
 import React from 'react'
 import './adminPanel.css'
+import LoginNavbar from '../../Components/LogiNavbar/LoginNavbar'
+import AdminCom from '../../Components/AdminCom/AdminCom'
 
 export default function AdminPanel() {
   return (
     <div>
-      <h3>this is admin panel</h3>
+      <LoginNavbar/>
+      <AdminCom/>
     </div>
   )
 }
