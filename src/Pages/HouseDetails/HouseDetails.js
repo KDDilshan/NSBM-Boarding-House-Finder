@@ -5,6 +5,7 @@ import TopRight from '../../Components/HouseDetailsCom/PageTop/TopRight'
 import PageBottom from '../../Components/HouseDetailsCom/PageBottom/PageBottom'
 import NavBar from '../../Components/NavigationBar/NavBar'
 import Topic from '../../Components/HouseDetailsCom/PageTop/Topic'
+import Footer from '../../Components/Footer/Footer'
 
 export default function HouseDetails() {
   return (
@@ -18,6 +19,7 @@ export default function HouseDetails() {
       <div className='bottomContainer'>
         <PageBottom/>
       </div>
+      <Footer/>
     
     </div>
     

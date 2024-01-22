@@ -1,0 +1,20 @@
+input[type=radio]{
+    display: none;
+}
+
+.star{
+    cursor: pointer;
+}
+
+.cardTop{
+    display: flex;
+    align-items: center;
+}
+
+.starRating{
+    margin-left: 10px;
+}
+
+.cardContainer{
+    margin-left: 70px;
+}

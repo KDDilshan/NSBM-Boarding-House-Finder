@@ -13,3 +13,8 @@
     padding-top: 10px;
     margin-left: 10px;
 }
+
+.ratingCards{
+    display: flex;
+    margin-top: 20px;
+}
