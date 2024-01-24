@@ -17,7 +17,7 @@ function App() {
           <Route path="/Signup" element={<SignUp/>}></Route>
           <Route path="/BoardingPage" element={<BoardingPage/>}></Route>
           <Route path="/HouseDetails" element={<HouseDetails/>}></Route>
-          <Route path="/AdminPanel" element={<AdminPanel/>}></Route>
+          <Route path="/Signup/AdminPanel" element={<AdminPanel/>}></Route>
           <Route path="/AboutUs" element={<AboutUs/>}></Route>
         </Routes>
     </BrowserRouter>

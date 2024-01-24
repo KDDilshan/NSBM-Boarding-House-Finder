@@ -1,6 +1,7 @@
 import React from 'react'
 import './signUpRight.css'
 import {useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function SignUpRight() {
     const [formData, setFormData] = useState({
@@ -43,6 +44,8 @@ export default function SignUpRight() {
         }
     
       };
+
+      const navigate = useNavigate()
 
   return (
     <div className='FormContainer'>
@@ -87,7 +90,7 @@ export default function SignUpRight() {
                         <input type="text" className="input" name='contactNo' value={formData.contactNo} onChange={handleChange}/>
                     </div>  
                 </div>
-                <button type="submit" class="signupbtn" className='button'>Sign Up</button>
+                <button type="submit" class="signupbtn" className='button' onClick={()=>navigate('AdminPanel')}>Sign Up</button>
             </div>
         </form>
       
