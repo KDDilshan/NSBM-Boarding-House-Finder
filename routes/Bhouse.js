@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import {getowners} from '../controllers/ownercontroller.js';
+import {getowners,getLocation} from '../controllers/ownercontroller.js';
 import { lazy } from 'react';
 
 const router=express.Router()
@@ -18,9 +18,17 @@ router.get('/api/ownerData',async (req,res)=>{
     }
 })
 
-router.post('/api/location',async(req,res)=>{
-    const{Latitude,Longitude}=req.body
-    const Location= await getLocation(Latitude,Longitude)
+router.get('/api/location',async(req,res)=>{
+    try {
+        const Location= await getLocation()
+        const Latitude=Location.map(Latitude=>Latitude.Latitude)
+        const logitude=Location.map(Longitude=>Longitude.Longitude)
+        res.status(200).send({Latitude,logitude})
+    } catch (error) {
+        console.log('the error is',error)
+        res.status(400).send("error in the databse")
+    }
+    
 })
 
 export {router as Ownerdata}
