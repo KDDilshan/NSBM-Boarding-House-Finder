@@ -8,6 +8,7 @@ import {ownerDescription} from './routes/boardingHouse.js';
 import {postroute,getroute} from './routes/reviws.js';
 import {Ownerdata} from './routes/Bhouse.js';
 import {verification} from './middleware/auth.js';
+import {loctionAdder} from './routes/location.js';
 
 dotenv.config()
 
@@ -22,6 +23,7 @@ app.use('/ownerForm',ownerDescription)
 app.use('/reviews',getroute)
 app.use('/review',verification,postroute)
 app.use('/owner',Ownerdata)
+app.use('/location',loctionAdder)
 
 mongoose.connect(process.env.MONGODB_KEY)
 .then(()=>{
