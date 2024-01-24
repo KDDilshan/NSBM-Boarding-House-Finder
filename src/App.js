@@ -5,6 +5,7 @@ import BoardingPage from "./Pages/BoardingPage/BoardingPage";
 import HouseDetails from "./Pages/HouseDetails/HouseDetails"
 import HomePage from "./Pages/HomePage/HomePage";
 import AdminPanel from "./Pages/AdminPanel/AdminPanel"
+import AboutUs from "./Pages/AboutUs/AboutUs";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/BoardingPage" element={<BoardingPage/>}></Route>
           <Route path="/HouseDetails" element={<HouseDetails/>}></Route>
           <Route path="/AdminPanel" element={<AdminPanel/>}></Route>
+          <Route path="/AboutUs" element={<AboutUs/>}></Route>
         </Routes>
     </BrowserRouter>
    </div>
