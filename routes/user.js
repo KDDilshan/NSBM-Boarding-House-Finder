@@ -23,28 +23,35 @@ router.post('/api/create',async(req,res)=>{
     }
 })
 
-router.post('/api/login',async(req,res)=>{
-    try{
-        const{username,password}=req.body
-        const log=await loginuser(username)
+router.post('/api/login', async (req, res) => {
+    try {
+        const { username, password } = req.body;
+        const log = await loginuser(username);
 
-        if(log){
-            const cheaking=await bcrypt.compare(password,log)
-            if(cheaking){
-                const user={name:username}
-                const accessToken=jwt.sign(user,process.env.TOKEN_KEY,{expiresIn:"1m"})
-                res.send(accessToken)
-            }else{
-                res.status(404).send("invaid password")
-            }           
-        }else{
-            res.status(404).send("user not found")
+        if (log) {
+            const isPasswordValid = await bcrypt.compare(password, log.password);
+
+            if (isPasswordValid) {
+                const payload = {
+                    userId: log.UserId,
+                    name: username
+                };
+                const accessToken = jwt.sign(payload, process.env.TOKEN_KEY, { expiresIn: "30m" });
+                res.send(accessToken);
+            } else {
+                res.status(401).send("Invalid password");
+            }
+        } else {
+            res.status(404).send("User not found");
         }
-        
-    }catch(error){
-        console.log('Error in login user:',error)
-        res.status(404).send('no user found')
-    }
-})
 
-export {router as usermethods}
+    } catch (error) {
+        console.log('Error in login user:', error);
+        res.status(500).send('Internal server error');
+    }
+});
+
+export { router as usermethods };
+
+
+

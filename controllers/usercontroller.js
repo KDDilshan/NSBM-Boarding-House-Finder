@@ -31,21 +31,25 @@ export const usercheak=(async(username,password)=>{
     
 })
 
-export const loginuser=(async(username)=>{
-    try{
-        const [login]=await pool.query(
-            `SELECT Password FROM users
+export const loginuser = async (username) => {
+    try {
+        const [login] = await pool.query(
+            `SELECT UserId, Password FROM users
             WHERE Username=?`,
-            [username])
-        if (login.length>0){
-            const storedPassword=login[0].Password
-            return storedPassword
-        }else{
-            return null
+            [username]
+        );
+
+        if (login.length > 0) {
+            const userData = {
+                UserId: login[0].UserId,
+                password: login[0].Password
+            };
+            return userData;
+        } else {
+            return null;
         }
-    }catch(error){
-        console.log('Eoor in databse qurry:',error)
-        throw new Error('Cant find a user')
+    } catch (error) {
+        console.log('Error in database query:', error);
+        throw new Error('Cannot find a user');
     }
-    
-})
+};

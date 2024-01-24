@@ -4,7 +4,7 @@ import pool from '../config/db.js';
 export const getowners=(async(req,res)=>{
     try{
         const [owners]=await pool.query(`
-        SELECT UserName FROM users
+        SELECT UserName,UserID FROM users
         WHERE Role = 'owner'`)
         return owners
     }catch(error){
@@ -13,4 +13,12 @@ export const getowners=(async(req,res)=>{
     }
 })
 
-// export const getLocation
+export const getLocation=(async(req,res)=>{
+    try {
+        const [result]=await pool.query(`
+        
+        `)
+    } catch (error) {
+        
+    }
+})

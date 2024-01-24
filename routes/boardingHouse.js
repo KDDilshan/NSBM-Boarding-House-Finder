@@ -6,15 +6,15 @@ const router = express.Router();
 
 router.post('/saveProduct', async (req, res) => {
   try {
-    const { userID, content } = req.body;
+    const { userID, description } = req.body;
 
     // Validate the request body
-    if (!userID || !content) {
+    if (!userID || !description) {
       return res.status(400).json({ error: 'User ID and content are required' });
     }
 
     // Create a new Product instance with the provided user ID and content
-    const product = new Product({ userID, content });
+    const product = new Product({ userID, description });
 
     // Save the product to the MongoDB database
     const savedProduct = await product.save();
@@ -55,6 +55,8 @@ router.get('/product/:id', async (req, res) => {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
-});
+})
 
 export { router as ownerDescription };
+
+
