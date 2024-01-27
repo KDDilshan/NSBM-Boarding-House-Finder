@@ -1,15 +1,30 @@
 import React from 'react'
 import './pageBottom.css'
 import RatingCard from './RatingCard'
+import {useState, useEffect} from 'react'
+import { useParams } from 'react-router-dom'
 
 export default function PageBottom() {
+  const [houses, setHouses] = useState([]);
+
+  useEffect (()=> {
+    const house = fetch();
+    house
+      .then ((res)=> res.json())
+      .then ((data)=>setHouses(data))
+      .catch((error)=>console.log(error))
+  },[])
+  const param = useParams()
+
+  console.log(param)
+
   return (
     <div className='bottomContainer'>
-      <div className="discriptionContainer">
-        <span className="discription">Discription</span>
-        <p className="houseDiscription">All units are furnished and do not have room for additional furniture. Therefore, please leave your three piece sofa in storage.
-Each resident will be provided a ski locker in addition to their unit. These lockers do not come with locks, we recommend residents bring their own.</p>
-      </div>
+      <h1>owner one {param.housedetailId}</h1>
+        {
+          houses.map((house)=>
+          <p>{house.description}</p>)
+        }
       <div className="ratingCards">
       <RatingCard/>
       <RatingCard/>
@@ -19,5 +34,5 @@ Each resident will be provided a ski locker in addition to their unit. These loc
       </div>
       
     </div>
-  )
-}
+  );
+};

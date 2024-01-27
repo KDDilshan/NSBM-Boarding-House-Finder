@@ -45,7 +45,7 @@ export default function SignUpRight() {
     
       };
 
-      const navigate = useNavigate()
+    const navigate = useNavigate();
 
   return (
     <div className='FormContainer'>
@@ -65,13 +65,16 @@ export default function SignUpRight() {
                     </div>
                     <div className="inputItem">
                         <span className="inputRole">Role</span>
-                        <label className='userInput'>User
-                            <input type="radio"  name='role' value='user' checked={formData.role === 'user'} onChange={handleChange}/>
+                        <label className='userInput'>
+                            User
+                            <input type="radio" name='role' value='user' checked={formData.role === 'user'} onChange={handleChange}/>
                         </label>
-                        <label className='ownerInput'>Owner
+                        <label className='ownerInput'>
+                            Owner
                             <input type="radio" name='role' value='owner' checked={formData.role === 'owner'} onChange={handleChange}/>
                         </label>
                     </div>
+
                     <div className="inputItem">
                     <span className="inputRole">Gender</span>
                         <label className='maleInput'>Male

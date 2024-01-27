@@ -21,7 +21,8 @@ export default function RatingCard() {
                 const currentRating = index +1;
                 return (
                     <label>
-                        <input type='radio' 
+                        <input type='radio'
+                        className='buttonStyle' 
                         name='rating' 
                         value={currentRating} 
                         onClick={()=> setRating(currentRating)}
