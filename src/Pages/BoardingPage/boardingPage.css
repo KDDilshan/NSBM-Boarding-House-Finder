@@ -1,3 +1,5 @@
 .BoardingPaneContainer{
     display: flex;
+    padding-top: 60px;
+
 }

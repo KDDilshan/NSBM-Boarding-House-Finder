@@ -1,7 +1,7 @@
-.NavBarBox{
+/* .NavBarBox{
     height: 60px;
     width: 100%;
-    background-color: rgb(0, 215, 155);
+    background-color: rgb(140, 179, 167);
     display: flex;
     align-items: center;
     position: sticky;
@@ -47,13 +47,71 @@
 .logbutton{
     margin: 30px;
     text-decoration: none;
+    color: black;
 }
 .signinbutton{
     margin: 30px;
     text-decoration: none;
+    color: black;
 }
 .aboutbutton{
     margin: 10px;
     text-decoration: none;
+    color: black;
+}
+ */
+ .navbar {
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    padding-top: 10px;
+    padding: 20px;
+    box-shadow: 0 1px 3px -2px black;
+    color: white;
+    background: linear-gradient(180deg,rgb(140, 179, 167),#e1ffea22 90%);
+    font-family: sans-serif;
+}
+.navbar-bg{
+   background-color: rgb(140, 179, 167);
+}
+.navbar p{
+   display: flex;
+   align-items: center;
+   font-size: 30px;
+   font-weight: 700;
+   letter-spacing: 1.5px;
+}
+.nav-menu{
+   display: flex;
+   align-items: center ;
+   list-style: none;
+   margin-right: 80px;
+   gap: 30px;
+   font-size: 20px;
+   font-weight: bolder;
+   font-weight: 500;
+   
+}
+.nav-menu li{
+   display: flex;
+   flex-direction: column;
+   align-items:center;
+   justify-content: center;
+   gap: 3px;
+   cursor: pointer;
+   font-size: 20px;
+
+}
+.nav-menu hr{
+   border: none;
+   width: 80%;
+   height: 3px;
+   border-radius: 10px;
+   background: rgb(140, 179, 167);
 }
 
+.nav-login button:active {
+color:white;
+}

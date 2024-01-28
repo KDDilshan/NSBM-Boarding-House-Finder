@@ -9,11 +9,12 @@ export default function HomePage() {
   return (
     <div>
       <NavBar/>
+      <img src="./images/background1.webp" alt="" className="backgoundImg" />
       <div className='pageContainer'>
         <HomeLeft/>
         <HomeRight/>
     </div>
-    <Footer/>
+      <Footer/>
     </div>
     
   )

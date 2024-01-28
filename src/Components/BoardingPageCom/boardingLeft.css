@@ -10,10 +10,11 @@
 .boardingBox{
     background-color: rgb(232, 249, 244);
     width: 350px;
-    height: 600px;
-    margin-left: 30px;
-    margin-top: 30px;
-    
+    height: 500px;
+    margin-left: 50px;
+    margin-top: 70px;
+    margin-bottom: 150px;
+    border-radius: 20px;
 }
 
 .uniImg{
@@ -54,13 +55,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(72, 214, 174);
+    background-color: rgb(190, 216, 208);
     border-radius: 20px;
     cursor: pointer;
     margin-left: 49px;
 }
 .ownerName{
     text-decoration: none;
+    color: black;
 }
 
 .boardinDetails{
