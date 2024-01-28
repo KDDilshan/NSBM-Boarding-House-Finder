@@ -71,7 +71,9 @@ export default function PageBottom() {
       {house ? (
         <>
           <h1>{`Owner ${id}`}</h1>
-          <p>{house.description}</p>
+          <div className="discriptionContainer">
+            <p className='discription'>{house.description}</p>
+          </div>
         </>
       ) : (
         <p>Loading...</p>
