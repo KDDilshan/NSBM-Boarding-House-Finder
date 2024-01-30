@@ -1,6 +1,6 @@
 import React from 'react'
 import './footer.css'
-import bodim_logo from '../Assests/bodim_logo.png'
+//import bodim_logo from '../Assests/bodim_logo.png'
 import facebook from '../Assests/facebook.png'
 import insta from '../Assests/insta.png'
 import whatsapp from '../Assests/whatsapp-icon.png'
@@ -10,8 +10,8 @@ export default function Footer() {
   return (
     <div className='footer'>
         <div className="footer-logo">
-          <img src={bodim_logo} alt=''/>
-            <p>campus bodima</p>
+          <img src='./images/BoardSphere-logos.jpeg' alt='' className='logoImg'/>
+            <p>BoardSphere</p>
         </div>
          <ul className="footer-links">
              <li>Universities</li>
