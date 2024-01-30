@@ -20,6 +20,7 @@ export default function UserForm() {
       };
       const handleSubmit = async(event) => {
         event.preventDefault();
+         console.log('Form submitted');
 
         try {
             const response = await fetch('http://localhost:5000/v2/api/create', {
@@ -60,7 +61,7 @@ export default function UserForm() {
                             value={currentRating} 
                             onClick={()=> setRating(currentRating)}
                             />
-                            <FaStar className='star'
+                            <FaStar size={25} className='starIcon'
                             color={currentRating <= (hover || rating) ? "#ffc107":"#e4e5e9"}
                             onMouseEnter={()=> setHover(currentRating)}
                             onMouseLeave={()=>setHover(null)}
@@ -69,8 +70,10 @@ export default function UserForm() {
                     );
                 })}
             </div>
-        <input type='text' placeholder='Add your Comment' name='comment' onChange={handleChange} className='inputComment'/>
-
+        <textarea rows="4" cols="50" placeholder='Add your Comment' name='comment' onChange={handleChange} className='inputComment'/>
+        <div className="subButtonContainer">
+            <button type="submit"  className='submitBtn'>Submit</button>
+        </div>
       </form>
     </div>
   )

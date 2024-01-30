@@ -3,8 +3,7 @@
     width: 500px;
     margin-top: 50px;
     margin-left: 500px;
-    margin-bottom: 40px;
-    background-color: rgb(140, 179, 167);
+    margin-bottom: 170px;
     border-radius: 20px;
     font-family: sans-serif;
 }
@@ -19,6 +18,9 @@
     color: rgb(58, 57, 57);
     padding: 20px;
 }
+.starIcon{
+    margin-right: 20px;
+}
 
 .commentStarRating{
     margin-left: 100px;
@@ -26,11 +28,20 @@
 
 .inputComment{
     width: 350px;
-    height: 40px;
-    border: none;
+    height: 80px;
     border-radius: 10px;
     margin-top: 7px;
 }
-.inputComment:focus{
-    outline: none;
+
+.subButtonContainer{
+    margin-left: 20px;
+    margin-top: 15px;
+    
+}
+.submitBtn{
+    width: 355px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: darkolivegreen;
 }

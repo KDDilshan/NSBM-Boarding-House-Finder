@@ -1,8 +1,9 @@
 .uniCardContainer{
     flex: 3;
     width: 60%;
+    display: flex;
     margin-bottom: 70px;
-    margin-top: 20px;
+    margin-top: 200px;
     font-family: sans-serif;
    
 }
