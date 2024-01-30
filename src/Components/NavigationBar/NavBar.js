@@ -55,7 +55,7 @@ export default function NavBar() {
 
   return (
     <div className={color? 'navbar navbar-bg' : 'navbar'}>
-      <Link to='/' className="logo">campus bodima</Link>
+      <Link to='/'><img src="./images/BoardSphere-logos.jpeg" alt="" className="logo" /></Link>
      <ul className = "nav-menu" >  
        <li onClick={()=>{setMenu("login")}}> <Link style = {{ textDecoration: 'none', color:'white',}} to='/Login'> Login</Link>{menu==="login"?<hr/>:<></>} </li>
        <li onClick={()=>{setMenu("universities")}}><Link style={{ textDecoration: 'none', color:'white'}}to='/SignUp'>SignUp</Link>{menu==="universities"?<hr/>:<></>}</li>

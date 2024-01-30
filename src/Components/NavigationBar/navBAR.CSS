@@ -73,6 +73,16 @@
     background: linear-gradient(180deg,rgb(140, 179, 167),#e1ffea22 90%);
     font-family: sans-serif;
 }
+
+.logotopic{
+    margin-left: -100px;
+}
+.logo{
+    height: 70px;
+    width: 80px;
+    object-fit: cover;
+    margin-top: -20px;
+}
 .navbar-bg{
    background-color: rgb(140, 179, 167);
 }
