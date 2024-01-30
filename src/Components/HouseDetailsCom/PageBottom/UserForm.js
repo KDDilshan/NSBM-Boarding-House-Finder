@@ -23,7 +23,7 @@ export default function UserForm() {
          console.log('Form submitted');
 
         try {
-            const response = await fetch('http://localhost:5000/v2/api/create', {
+            const response = await fetch('http://localhost:4000/reviews/api/getReview', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -69,12 +69,17 @@ export default function UserForm() {
                         </label>
                     );
                 })}
+                {rating}
             </div>
-        <textarea rows="4" cols="50" placeholder='Add your Comment' name='comment' onChange={handleChange} className='inputComment'/>
+        <textarea rows="4" cols="50" placeholder='Add your Comment' name='description' onChange={handleChange} className='inputComment'/>
         <div className="subButtonContainer">
             <button type="submit"  className='submitBtn'>Submit</button>
+          
         </div>
       </form>
     </div>
   )
 }
+
+
+

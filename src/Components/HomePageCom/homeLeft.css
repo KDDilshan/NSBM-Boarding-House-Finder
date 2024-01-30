@@ -3,14 +3,14 @@
     width: 60%;
     display: flex;
     margin-bottom: 70px;
-    margin-top: 200px;
+    margin-top: -200px;
     font-family: sans-serif;
    
 }
 
 .uniList{
     margin-top: 0;
-    margin-left: 40px;
+    margin-left: 60px;
     border-radius: 10px;
     border-style: inherit;
     list-style: none;

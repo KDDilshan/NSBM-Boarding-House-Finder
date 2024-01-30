@@ -83,8 +83,6 @@ export default function PageBottom() {
         <RatingCard />
         <RatingCard />
         <RatingCard />
-        <RatingCard />
-        <RatingCard />
       </div>
     </div>
   );

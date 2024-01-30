@@ -35,3 +35,6 @@
 .locInput:focus{
     outline: none;
 }
+.button{
+    background-color: rgb(140, 179, 167);
+}

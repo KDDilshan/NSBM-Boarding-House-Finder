@@ -9,6 +9,7 @@ export default function BoardingPage() {
   return (
     <div>
       <NavBar/>
+      <img src="./images/boardingPageBack.avif" alt="" className="bBackgoundImg" />
       <div className='BoardingPaneContainer'>
         <BoardingLeft/>
         <BoardingRight/>

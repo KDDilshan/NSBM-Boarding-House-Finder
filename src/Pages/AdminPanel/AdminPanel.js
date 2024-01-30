@@ -8,6 +8,7 @@ export default function AdminPanel() {
   return (
     <div>
       <LoginNavbar/>
+      <img src="./images/adminBack.avif" alt="" className="aBackgroundImg" />
       <AdminCom/>
       <Footer/>
     </div>

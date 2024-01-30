@@ -60,7 +60,7 @@ export default function AdminCom() {
             <div className="descriptionInput">
               <label className='inputDescription'>Description*</label>
               <div className="DescriptionInput">
-                  <input type='text' className='desInput' name='description' onChange={HandleChange}/>
+                  <textarea className='desInput' name='description' onChange={HandleChange}/>
               </div>
             </div>
             <div className="locationInput">
