@@ -8,6 +8,7 @@ export default function SignUp() {
   return (
     <div>
       <NavBar/>
+        <img src="./images/signupBack.avif" alt="" className="sBackgoundImg" />     
         <SignUpRight/>
       <Footer/>
     </div>
