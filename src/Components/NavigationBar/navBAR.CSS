@@ -1,4 +1,4 @@
-/* .NavBarBox{
+.NavBarBox {
     height: 60px;
     width: 100%;
     background-color: rgb(140, 179, 167);
@@ -7,121 +7,89 @@
     position: sticky;
     top: 0;
     font-family: sans-serif;
+  }
+  
+  .logo {
+    width: 70px;
+    height: 64px;
+    margin-left: 20px;
+    object-fit: cover;
     
-}
-
-.logo{
-    font-family: sans-serif;
-    font-size: 35px;
-    font-weight: bold;
-    margin-left: 10px;
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.navBarLeft{
+  }
+  
+  .navBarLeft {
     flex: 9;
-}
-
-.navBarRight{
+  }
+  
+  .navBarRight {
     flex: 5;
     display: flex;
     align-items: center;
-}
-
-.navBarIcons{
+  }
+  
+  .navBarIcons {
     display: flex;
     align-items: center;
-}
-
-.homeicon{
-    margin-right: 30px;
-    
-}
-
-.iconButtons{
-    font-weight: bold;
-}
-
-.logbutton{
-    margin: 30px;
-    text-decoration: none;
-    color: black;
-}
-.signinbutton{
-    margin: 30px;
-    text-decoration: none;
-    color: black;
-}
-.aboutbutton{
-    margin: 10px;
-    text-decoration: none;
-    color: black;
-}
- */
- .navbar {
+  }
+  
+  .iconButtons {
     display: flex;
-    height: 30px;
-    justify-content: space-between;
-    width: 100%;
-    position: fixed;
-    padding-top: 10px;
-    padding: 20px;
-    box-shadow: 0 1px 3px -2px black;
+    align-items: center;
+    justify-content: flex-end; /* Align buttons to the right */
+  }
+  
+  .logbutton,
+  .signinbutton,
+  .aboutbutton {
+    margin: 10px; /* Adjust the margin as needed */
+    font-size: 16px; /* Adjust the font size as needed */
+    padding: 8px 20px; /* Adjust the padding as needed */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    text-decoration: none;
+    color: black;
+  }
+  
+  .logbutton:hover,
+  .signinbutton:hover,
+  .aboutbutton:hover {
+    color: #ececec; /* Change color on hover */
+  }
+  
+  .logoutButton,
+  .adminPanelButton {
+    margin: 10px; /* Adjust the margin as needed */
+    padding: 5px 10px; /* Adjust the padding as needed */
+    font-weight: bold;
+    border-radius: 15px; /* Optional: Add rounded corners */
+    cursor: pointer;
+  }
+  
+  .logoutButton {
+    background-color: #ff5757;
+    border: none;
+    font-size: 18px;
     color: white;
-    background: linear-gradient(180deg,rgb(140, 179, 167),#e1ffea22 90%);
-    font-family: sans-serif;
-}
-
-.logotopic{
-    margin-left: -100px;
-}
-.logo{
-    height: 70px;
-    width: 80px;
-    object-fit: cover;
-    margin-top: -20px;
-}
-.navbar-bg{
-   background-color: rgb(140, 179, 167);
-}
-.navbar p{
-   display: flex;
-   align-items: center;
-   font-size: 30px;
-   font-weight: 700;
-   letter-spacing: 1.5px;
-}
-.nav-menu{
-   display: flex;
-   align-items: center ;
-   list-style: none;
-   margin-right: 80px;
-   gap: 30px;
-   font-size: 20px;
-   font-weight: bolder;
-   font-weight: 500;
-   
-}
-.nav-menu li{
-   display: flex;
-   flex-direction: column;
-   align-items:center;
-   justify-content: center;
-   gap: 3px;
-   cursor: pointer;
-   font-size: 20px;
-
-}
-.nav-menu hr{
-   border: none;
-   width: 80%;
-   height: 3px;
-   border-radius: 10px;
-   background: rgb(140, 179, 167);
-}
-
-.nav-login button:active {
-color:white;
-}
+  }
+  
+  .adminPanelButton {
+    background-color: #4caf50;
+    border: none;
+    font-size: 18px;
+    color: white;
+  }
+  
+  .logoutButton:hover {
+    background-color: #ff3737; /* Change color on hover */
+  }
+  
+  .adminPanelButton:hover {
+    background-color: #45a049; /* Change color on hover */
+  }
+  
+  /* Add space between buttons */
+  .adminPanelButton,
+  .logoutButton,
+  .aboutbutton {
+    margin-left: 10px; /* Adjust the space as needed */
+  }
+  

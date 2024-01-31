@@ -16,11 +16,11 @@
     height: 300px;
     width: 350px;
     padding: 50px;
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 200px;
-    margin-left: 200px;
-    margin-top: 100px;
-    margin-bottom: 80px;
+    margin-left: 0;
+    margin-top: -50px;
+    margin-bottom: 100px;
     border-radius: 20px;
     align-items: center;
     font-family: sans-serif;
@@ -86,4 +86,9 @@
 .signUpLink{
     margin-top: 20px;
     font-size: 15px;
+    
+}
+.signLink{
+    text-decoration: none;
+    color: blue;
 }

@@ -3,9 +3,16 @@
     margin-left: 30px;
 }
 
-.houseOne{
-    width: 600px;
-    height: 350px;
-}
+.topLeftContainer {
+    margin-left: 30px;
+    margin-top: -100px;
+  }
+  
+  .largeImage {
+    width: 500px; /* Adjust the width to your desired size */
+    height: auto; /* Auto-adjust the height to maintain the aspect ratio */
+    margin-bottom: 5px; /* Space between the large image and any content below it */
+  }
+  
 
 

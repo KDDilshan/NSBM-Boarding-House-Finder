@@ -1,13 +1,11 @@
 import React from 'react'
 import './topLeft.css'
 
-export default function TopLeft() {
+export default function TopLeft({ photoURL }) {
+  console.log('photoURL:', photoURL);
   return (
-    <div className='topLeftContainer'>
-        <div className="fisrtRowimgContainer">
-          <img src="./images/room1.webp" alt="" className="houseOne" />
-        </div>
-        
+    <div className="topLeftContainer">
+      <img src={photoURL} alt="" className="largeImage" />
     </div>
-  )
+  );
 }

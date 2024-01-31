@@ -1,81 +1,141 @@
-import React from 'react'
-import './adminCom.css'
-import {useState} from 'react'
+import React, { useState, useEffect } from 'react';
+import './adminCom.css';
+import { jwtDecode } from 'jwt-decode';
+import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 export default function AdminCom() {
-    const [file, setFile] = useState();
-    function handleChange(e) {
-        console.log(e.target.files);
-        setFile(URL.createObjectURL(e.target.files[0]));
-    }
+  const [userId, setUserID] = useState(null);
+  const [formData, setFormData] = useState({
+    description: '',
+    imageUrl: '',
+    location: '',
+  });
+  const navigate = useNavigate();
 
-    const [formData, setFormData] = useState({
-      description:'',
-    })
-
-    const HandleChange = (event) => {
-      const { name, value } = event.target;
-      setFormData((prevData) => ({
-        ...prevData,
-        [name]: value,
-      }));
-    };
-
-    const handleSubmit = async(event) => {
-      event.preventDefault();
-      
+  useEffect(() => {
+    const getUserIdFromToken = (token) => {
       try {
-        const response = await fetch('http://localhost:5000/v2/api/create', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
-  
-        if (response.ok) {
-          console.log('Form submitted successfully');
-          // Optionally, you can handle the success response from the backend
-        } else {
-          console.error('Failed to submit form');
-          // Optionally, you can handle the error response from the backend
-        }
+        const decoded = jwtDecode(token);
+        return decoded.userId;
       } catch (error) {
-        console.log('Error submitting form:', error);
-        // Handle other potential errors, such as network issues
+        console.error('Error decoding token:', error);
+        return null;
       }
-  
     };
+
+    const token = localStorage.getItem('accessToken');
+    const userIdFromToken = getUserIdFromToken(token);
+
+    setUserID(userIdFromToken);
+  }, []);
+
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const handleFormChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleLocationClick = () => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        setFormData((prevData) => ({
+          ...prevData,
+          location: `(${latitude}, ${longitude})`,
+        }));
+      },
+      (error) => {
+        console.error('Error getting location:', error.message);
+      }
+    );
+  };
+
+  const onSubmit = async () => {
+    try {
+      const userID = userId;
+
+      const response = await fetch('http://localhost:4000/ownerForm/saveProduct', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userID,
+          description: formData.description,
+          imageUrl: formData.imageUrl,
+          location: formData.location,
+        }),
+      });
+
+      if (response.ok) {
+        alert("Form submitted sucess fully")
+        navigate('/');
+      } else {
+       alert('Failed to submit form');
+        console.error("falied to SubmitEvent,it form");
+      }
+    } catch (error) {
+      alert("Error submitting form .please try agnin")
+      console.log('Error submitting form:', error);
+    }
+  };
+
   return (
     <div className='panelContainer'>
-      <form onSubmit={handleSubmit}>
+      <div className='formCont'>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="inputs">
-            <div className="imagesInput">
-              <label className='inputName'>Images*</label>
-              <div className="ImageInput">
-                  <input type="file" onChange={handleChange} />
-                  <img src={file} alt=''/> 
-              </div>
+          <div className="imagesInput">
+            <label className='inputName'>Image URL*</label>
+            <div className="ImageInput">
+              <input
+                type="text"
+                name="imageUrl"
+                placeholder="Enter Image URL"
+                value={formData.imageUrl}  // Make sure this is controlled by state
+                onChange={handleFormChange}  // Handle changes
+              />
+              <img src={formData.imageUrl} alt='' />
             </div>
-            <div className="descriptionInput">
-              <label className='inputDescription'>Description*</label>
-              <div className="DescriptionInput">
-                  <textarea className='desInput' name='description' onChange={HandleChange}/>
-              </div>
+            <span className="error-message">{errors.imageUrl && errors.imageUrl.message}</span>
+          </div>
+          <div className="descriptionInput">
+            <label className='inputDescription'>Description*</label>
+            <textarea
+              className='desInput'
+              name='description'
+              onChange={handleFormChange}
+              placeholder="Type your text here"
+            />
+          </div>
+          <div className="locationInput">
+            <label className='inputLocation'>Location*</label>
+            <div className="LocationInput">
+              <input
+                type='text'
+                placeholder='Add Your Location'
+                className='locInput'
+                value={formData.location}
+                onChange={handleFormChange}
+                {...register('location')}
+              />
+              <button type="button" onClick={handleLocationClick}>
+                Get Current Location
+              </button>
             </div>
-            <div className="locationInput">
-              <label className='inputLocation'>Location*</label>
-              <div className="LocationInput">
-                  <input type='text' placeholder='Add Your Location' className='locInput'/>
-              </div>
-            </div>
+          </div>
         </div>
         <div className="submitButton">
-          <button type="submit" class="signupbtn" className='button'>Submit</button>
+          <button type="submit" className='button'>Submit</button>
         </div>
       </form>
+      </div>
       
-
     </div>
-  )
+  );
 }

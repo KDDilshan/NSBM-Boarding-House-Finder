@@ -8,6 +8,9 @@
     margin-bottom: 50px;
     border-radius: 20px;
 }
+.formCont{
+    
+}
 
 .inputs{
     font-family: sans-serif;
@@ -15,11 +18,25 @@
 .descriptionInput{
     margin-top: 20px;
 }
+.inputDescription{
+    height: 50px;
+}
+.ImageInput img {
+    max-width: 50%;  /* Set the maximum width to the container width */
+    max-height: 50px;  /* Set the maximum height (adjust as needed) */
+    display: block;  /* Ensure the image is displayed as a block element */
+    margin: 0 auto;  /* Center the image horizontally within the container */
+}
+
 .desInput{
+    box-sizing: border-box;
     border: none;
-    height: 60px;
-    width: 280px;
+    height: 200px;
+    width: 400px;
+    padding-top: 10px;
     border-radius: 10px;
+    resize: none; /* Optional: Disable resizing */
+
 }
 .desInput:focus{
     outline: none;
