@@ -8,7 +8,9 @@ export default function AboutUs() {
   return (
     <div>
       <NavBar/>
-      <AboutUsCom/>
+      <>
+        <AboutUsCom/>
+      </>
       <Footer/>
     </div>
   )

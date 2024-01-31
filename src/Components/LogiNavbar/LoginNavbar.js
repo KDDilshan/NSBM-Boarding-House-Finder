@@ -1,13 +1,13 @@
 import React from 'react'
 import './loginNavbar.css'
 import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function LoginNavbar() {
   return (
     <div className='NavBarBox'>
             <div className="navBarLeft">
-              <NavLink to='/' className="logo">campus bodima</NavLink>
+            <Link to='/'><img src="./images/BoardSphere-logos.jpeg" alt="" className="logo" /></Link>
             </div>
             <div className="navBarRight">
               <div className="userProfile">
@@ -17,7 +17,7 @@ export default function LoginNavbar() {
                     <span className="userName">user Name</span> 
               </div>
               <div className="logOutButtonContainer">
-              <NavLink to='/' className="logOutButton">Log out</NavLink>
+              <Link to='/' className="logOutButton">Log out</Link>
               </div>
             </div>
     </div>

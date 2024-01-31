@@ -62,6 +62,6 @@ export default function NavBar() {
        <li onClick={()=>{setMenu("about Us")}}><Link style={{ textDecoration: 'none', color:'white', }}to='/AboutUs'>About Us</Link>{menu==="about us"?<hr/>:<></>}</li>
      </ul>
     </div>
-  )
+  );
 
 }
